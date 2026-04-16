@@ -5,4 +5,5 @@ function rolarDados() {
 
     document.getElementById("forca").innerText = forca;
     document.getElementById("agilidade").innerText = agilidade;
+    console.log("Sistema de RPG inicializado com sucesso!");
 }

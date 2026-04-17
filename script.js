@@ -5,12 +5,12 @@ function rolarDados() {
     let classe = "";
 
     // 2. Tomada de decisão (Aqui entra o ADS!)
-    if (forca > agilidade && forca >= 15) {
+if (forca === agilidade) {
+        classe = "Mestre do Equilíbrio ⚖️";
+    } else if (forca > agilidade && forca >= 15) {
         classe = "Guerreiro Pesado 🛡️";
     } else if (agilidade > forca && agilidade >= 15) {
         classe = "Ranger Veloz 🏹";
-    } else if (forca < 5 && agilidade < 5) {
-        classe = "Aldeão Comum 🥖";
     } else {
         classe = "Aventureiro Iniciante ⚔️";
     }

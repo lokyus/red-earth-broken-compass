@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gerador de Herói</title>
-</head>
-<body>
-    <h1>Status do Personagem</h1>
-    <p>Força: <span id="forca">0</span></p>
-    <p>Agilidade: <span id="agilidade">0</span></p>
-    <p>Classe Sugerida: <span id="classe">---</span></p>
-    <button onclick="rolarDados()">Gerar Atributos</button>
+<h1>Operator Lab - Atributos Dinâmicos</h1>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<div class="controle">
+    <p>Saúde (HP): 
+        <button onclick="ajustarAtributo('saude', -1)">-</button>
+        <span id="val-saude">3</span>
+        <button onclick="ajustarAtributo('saude', 1)">+</button>
+    </p>
+    
+    <p>Velocidade: 
+        <button onclick="ajustarAtributo('velocidade', -1)">-</button>
+        <span id="val-vel">3</span>
+        <button onclick="ajustarAtributo('velocidade', 1)">+</button>
+    </p>
+</div>
+
+<hr>
+
+<div class="resultado">
+    <p><strong>Hitbox Estimada:</strong> <span id="val-tamanho">Médio</span></p>
+    <small>*Total de pontos permitidos: 6</small>
+</div>

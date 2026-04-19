@@ -1,67 +1,53 @@
-/* Configuração Geral - Fundo Escuro */
 body {
-    background-color: #0d1117; /* Azul bem escuro, quase preto */
-    color: #e6edf3; /* Cinza claro para não cansar os olhos */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1a1a15;
+    color: #d4c5a1;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding: 20px;
 }
 
 h1 {
-    color: #f0ad4e; /* Amarelo alerta/tático */
+    color: #c2a878;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #f0ad4e;
+    letter-spacing: 4px;
+    border-bottom: 3px solid #5d5d41;
 }
 
-/* Painel Central */
 .controles {
-    background-color: #161b22;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #30363d;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    width: 350px;
+    background-color: #26261e;
+    border: 1px solid #5d5d41;
+    padding: 30px;
+    width: 380px;
+    box-shadow: 10px 10px 0px #000;
 }
 
-/* Estilização dos Botões */
+.atributo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 button {
-    background-color: #21262d;
-    color: #58a6ff;
-    border: 1px solid #30363d;
-    padding: 8px 15px;
-    border-radius: 6px;
+    background-color: #3d3d2e;
+    color: #c2a878;
+    border: 1px solid #5d5d41;
+    padding: 10px 15px;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
-    margin: 0 10px;
 }
 
 button:hover {
-    background-color: #30363d;
-    border-color: #8b949e;
-    color: #fff;
+    background-color: #c2a878;
+    color: #1a1a15;
 }
 
-/* Destaque dos Atributos */
-span {
-    font-size: 1.2rem;
-    font-family: 'Courier New', Courier, monospace; /* Fonte tipo terminal */
-    color: #79c0ff;
-}
-
-#pontos-restantes {
-    color: #ff7b72; /* Vermelho para atenção */
-    font-weight: bold;
-}
-
-/* Rodapé de Status */
 .resultado {
-    margin-top: 20px;
-    text-align: center;
-    background: #1f242c;
+    margin-top: 25px;
+    background: #2a2a22;
     padding: 15px;
-    border-left: 5px solid #f0ad4e;
+    border-left: 8px solid #c2a878;
+    width: 380px;
 }

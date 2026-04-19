@@ -2,36 +2,52 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Operator Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação Sahel | Burkina Faso</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Operator Lab: Custom Build</h1>
-    <p>Pontos disponíveis: <span id="pontos-restantes">0</span></p>
+    <header>
+        <h1>SAHEL TACTICAL HUB</h1>
+        <p>Setor de Operações: <strong>Burkina Faso</strong></p>
+    </header>
 
-    <div class="controles">
-        <p>🛡️ Saúde: 
-            <button onclick="ajustar('saude', -1)">-</button>
-            <span id="val-saude">3</span>
-            <button onclick="ajustar('saude', 1)">+</button>
-        </p>
+    <main class="controles">
+        <h2>Ficha do Operador</h2>
+        <p>Pontos de Implantação: <span id="pontos-restantes">0</span></p>
+        <hr>
 
-        <p>⚡ Velocidade: 
-            <button onclick="ajustar('velocidade', -1)">-</button>
-            <span id="val-vel">3</span>
-            <button onclick="ajustar('velocidade', 1)">+</button>
-        </p>
+        <div class="atributo">
+            <span>🛡️ SAÚDE (HP)</span>
+            <div class="botoes">
+                <button onclick="ajustar('saude', -1)">-</button>
+                <span id="val-saude">3</span>
+                <button onclick="ajustar('saude', 1)">+</button>
+            </div>
+        </div>
 
-        <p>📏 Tamanho (Hitbox): 
-            <button onclick="ajustar('tamanho', -1)">-</button>
-            <span id="val-tam">3</span>
-            <button onclick="ajustar('tamanho', 1)">+</button>
-        </p>
-    </div>
+        <div class="atributo">
+            <span>⚡ MOBILIDADE</span>
+            <div class="botoes">
+                <button onclick="ajustar('velocidade', -1)">-</button>
+                <span id="val-vel">3</span>
+                <button onclick="ajustar('velocidade', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="atributo">
+            <span>📏 OCULTAÇÃO (HITBOX)</span>
+            <div class="botoes">
+                <button onclick="ajustar('tamanho', -1)">-</button>
+                <span id="val-tam">3</span>
+                <button onclick="ajustar('tamanho', 1)">+</button>
+            </div>
+        </div>
+    </main>
 
     <div class="resultado">
-        <p>Status da Hitbox: <span id="val-tam-desc">Médio</span></p>
+        <p><strong>STATUS TÁTICO:</strong> <span id="val-tam-desc">Equilibrado</span></p>
     </div>
 
     <script src="script.js"></script>

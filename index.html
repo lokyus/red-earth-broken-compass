@@ -1,23 +1,39 @@
-<h1>Operator Lab: Custom Build</h1>
-<p>Pontos disponíveis: <span id="pontos-restantes">0</span></p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Operator Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<div class="controles">
-    <p>🛡️ Saúde: 
-        <button onclick="ajustar('saude', -1)">-</button>
-        <span id="val-saude">3</span>
-        <button onclick="ajustar('saude', 1)">+</button>
-    </p>
+    <h1>Operator Lab: Custom Build</h1>
+    <p>Pontos disponíveis: <span id="pontos-restantes">0</span></p>
 
-    <p>⚡ Velocidade: 
-        <button onclick="ajustar('velocidade', -1)">-</button>
-        <span id="val-vel">3</span>
-        <button onclick="ajustar('velocidade', 1)">+</button>
-    </p>
+    <div class="controles">
+        <p>🛡️ Saúde: 
+            <button onclick="ajustar('saude', -1)">-</button>
+            <span id="val-saude">3</span>
+            <button onclick="ajustar('saude', 1)">+</button>
+        </p>
 
-    <p>📏 Tamanho (Hitbox): 
-        <button onclick="ajustar('tamanho', -1)">-</button>
-        <span id="val-tam">3</span>
-        <button onclick="ajustar('tamanho', 1)">+</button>
-    </p>
-</div>
-<script src="script.js"></script>
+        <p>⚡ Velocidade: 
+            <button onclick="ajustar('velocidade', -1)">-</button>
+            <span id="val-vel">3</span>
+            <button onclick="ajustar('velocidade', 1)">+</button>
+        </p>
+
+        <p>📏 Tamanho (Hitbox): 
+            <button onclick="ajustar('tamanho', -1)">-</button>
+            <span id="val-tam">3</span>
+            <button onclick="ajustar('tamanho', 1)">+</button>
+        </p>
+    </div>
+
+    <div class="resultado">
+        <p>Status da Hitbox: <span id="val-tam-desc">Médio</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

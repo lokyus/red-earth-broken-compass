@@ -1,44 +1,30 @@
-let saude = 3;
-let velocidade = 3;
-let tamanho = 3;
+// --- LÓGICA DO DOSSIÊ TÁTICO: RED EARTH ---
 
-const TOTAL_LIMITE = 9;
+function abrirDossie(nome, biografia) {
+    // Localiza os elementos que criamos no HTML
+    const modal = document.getElementById("modal-dossie");
+    const titulo = document.getElementById("modal-titulo");
+    const texto = document.getElementById("modal-texto");
 
-function ajustar(attr, mudanca) {
-    let soma = saude + velocidade + tamanho;
+    // Insere os dados táticos do operador clicado
+    titulo.innerText = "ARQUIVO CONFIDENCIAL: " + nome;
+    texto.innerText = biografia;
 
-    if (attr === 'saude') {
-        if (mudanca > 0 && soma < TOTAL_LIMITE && saude < 5) saude++;
-        else if (mudanca < 0 && saude > 1) saude--;
-    }
-
-    if (attr === 'velocidade') {
-        if (mudanca > 0 && soma < TOTAL_LIMITE && velocidade < 5) velocidade++;
-        else if (mudanca < 0 && velocidade > 1) velocidade--;
-    }
-
-    if (attr === 'tamanho') {
-        if (mudanca > 0 && soma < TOTAL_LIMITE && tamanho < 5) tamanho++;
-        else if (mudanca < 0 && tamanho > 1) tamanho--;
-    }
-
-    atualizarInterface();
+    // Faz a janela aparecer alterando o CSS de 'none' para 'block'
+    modal.style.display = "block";
+    
+    console.log("Acesso autorizado aos dados de " + nome);
 }
 
-function atualizarInterface() {
-    document.getElementById("val-saude").innerText = saude;
-    document.getElementById("val-vel").innerText = velocidade;
-    document.getElementById("val-tam").innerText = tamanho;
-    document.getElementById("pontos-restantes").innerText = TOTAL_LIMITE - (saude + velocidade + tamanho);
-
-    let desc = "";
-    // Lógica Inversa: Tamanho alto (compactação) é furtivo
-    if (tamanho >= 4) desc = "OPERADOR FURTIVO (DIFÍCIL DE DETECTAR)";
-    else if (tamanho <= 2) desc = "OPERADOR PESADO (ALVO EXPOSTO)";
-    else desc = "PERFIL PADRÃO DE INFANTARIA";
-
-    document.getElementById("val-tam-desc").innerText = desc;
+function fecharDossie() {
+    // Esconde a janela novamente
+    document.getElementById("modal-dossie").style.display = "none";
 }
 
-// Inicializa a tela
-atualizarInterface();
+// Fecha o dossiê se o usuário clicar fora da caixa (na parte escura)
+window.onclick = function(event) {
+    const modal = document.getElementById("modal-dossie");
+    if (event.target == modal) {
+        fecharDossie();
+    }
+}

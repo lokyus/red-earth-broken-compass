@@ -132,3 +132,50 @@ h1, h2 {
     border-color: #c2a878;
     box-shadow: 0 0 15px rgba(194, 168, 120, 0.2);
 }
+/* O Fundo do Modal (Escurecido) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* A Caixa do Dossiê */
+.modal-conteudo {
+    background-color: #1c1c16;
+    margin: 10% auto;
+    padding: 30px;
+    border: 2px solid #c2a878;
+    width: 50%;
+    color: #d4c5a1;
+    box-shadow: 0 0 20px #c2a878;
+}
+
+.fechar {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #c2a878;
+}
+
+.btn-dossie {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #c2a878;
+    color: #c2a878;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+
+.btn-dossie:hover {
+    background: #c2a878;
+    color: #000;
+}

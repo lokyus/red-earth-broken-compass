@@ -128,33 +128,66 @@ window.onclick = function(event) {
     const modal = document.getElementById("modal-dossie");
     if (event.target == modal) fecharDossie();
 }
-// Função que inicia a música com o fade-in de 70%
-function iniciarMusicaAutomatico() {
+const music = document.getElementById("bgMusic");
+const btnSom = document.getElementById("btn-audio");
+const icone = document.getElementById("icone-som");
+
+// Função para fazer o Volume subir suavemente até 70%
+function somCrescente() {
+    music.volume = 0;
+    music.play();
+    let fadeIn = setInterval(() => {
+        if (music.volume < 0.7) {
+            music.volume = Math.min(music.volume + 0.05, 0.7);
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 200);
+}
+
+// 1. Função Unificada de Play com Fade-in
+function darPlayComFade() {
+    const music = document.getElementById("bgMusic");
+    const icone = document.getElementById("icone-som");
+    const btn = document.getElementById("btn-audio");
+
+    music.volume = 0;
+    music.play().then(() => {
+        icone.innerText = "🔊";
+        btn.classList.remove("mudo");
+        
+        let fadeIn = setInterval(() => {
+            if (music.volume < 0.7) {
+                music.volume = Math.min(music.volume + 0.05, 0.7);
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 200);
+    }).catch(e => console.log("Aguardando interação..."));
+}
+
+// 2. Função do Botão (Mute/Unmute)
+function toggleMusic(event) {
+    // ESSA LINHA É A CHAVE: impede que o clique chegue no 'window'
+    if(event) event.stopPropagation(); 
+
     const music = document.getElementById("bgMusic");
     const icone = document.getElementById("icone-som");
     const btn = document.getElementById("btn-audio");
 
     if (music.paused) {
-        music.volume = 0;
-        music.play().then(() => {
-            // Se o navegador permitiu o play, faz o fade-in
-            icone.innerText = "🔊";
-            btn.classList.remove("mudo");
-            
-            let fadeIn = setInterval(() => {
-                if (music.volume < 0.7) {
-                    music.volume = Math.min(music.volume + 0.05, 0.7);
-                } else {
-                    clearInterval(fadeIn);
-                }
-            }, 200);
-        }).catch(error => {
-            console.log("Autoplay bloqueado pelo navegador. Aguardando interação.");
-        });
+        darPlayComFade();
+    } else {
+        music.pause();
+        icone.innerText = "🔇";
+        btn.classList.add("mudo");
     }
 }
 
-// "Vigia" o primeiro clique do usuário no site para soltar o som
+// 3. Ativação no primeiro clique (apenas se a música estiver pausada)
 window.addEventListener('click', () => {
-    iniciarMusicaAutomatico();
-}, { once: true }); // O '{ once: true }' garante que isso só rode no PRIMEIRO clique
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+        darPlayComFade();
+    }
+}, { once: true });

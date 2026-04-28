@@ -191,3 +191,13 @@ window.addEventListener('click', () => {
         darPlayComFade();
     }
 }, { once: true });
+
+// Adiciona uma sombra ou opacidade maior ao rolar a página
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        nav.style.background = 'rgba(5, 5, 5, 0.95)';
+    } else {
+        nav.style.background = 'rgba(10, 10, 10, 0.85)';
+    }
+});

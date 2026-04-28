@@ -5,15 +5,27 @@
     <title>Operação Sahel | Site Oficial</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
     <div class="map-bg"></div>
-<div class="map-overlay"></div>
+    <div class="map-overlay"></div>
 
-    <header class="hero">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">RED EARTH: BROKEN COMPASS</div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">INÍCIO</a></li>
+                <li><a href="#projeto">PROJETO</a></li>
+                <li><a href="#recrutamento">RECRUTAMENTO</a></li>
+                <li><a href="#doacoes" class="btn-donate">DOAÇÕES</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
         <div class="overlay">
             <h1>RED EARTH: BROKEN COMPASS</h1>
-            <p>Táticas de Elite no Coração de Burkina Faso</p>
+            <p>Arte Conceitual de Um Game Anti-Imperialista.</p>
             <button class="btn-main">Assista ao Trailer</button>
         </div>
     </header>
@@ -68,26 +80,68 @@ Mas o solo de Burkina não perdoa quem tenta ser seu dono. A terra vermelha est�
     </div>
 </section>
 
-<div id="modal-dossie" class="modal">
-    <div class="modal-conteudo">
-        <span class="fechar" onclick="fecharDossie()">&times;</span>
-        <h2 id="modal-titulo"></h2>
-        <hr>
-        <p id="modal-texto"></p>
+    <section id="projeto" class="conteudo-pagina">
+        <div class="container tatico">
+            <h2 class="titulo-sessao">DIRETRIZES DO PROJETO</h2>
+            <div class="info-box">
+                <p>O <strong>Red Earth: Broken Compass</strong> é um simulador tático focado na resistência soberana no Sahel.</p>
+                <ul>
+                    <li>Simulação de balística realista.</li>
+                    <li>Operadores baseados em história real.</li>
+                    <li>Mapas topográficos reais.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="recrutamento" class="conteudo-pagina">
+        <div class="container tatico">
+            <h2 class="titulo-sessao">RECRUTAMENTO OPERACIONAL</h2>
+            <p>Buscamos desenvolvedores e artistas para a LOKY AUTONOMY.</p>
+            <form class="form-tatico">
+                <input type="text" placeholder="NOME/CODINOME">
+                <input type="email" placeholder="E-MAIL DE CONTATO">
+                <select>
+                    <option value="">ESPECIALIDADE...</option>
+                    <option value="dev">Desenvolvimento (ADS)</option>
+                    <option value="art">Arte & Design</option>
+                </select>
+                <button type="submit" class="btn-dossie">ENVIAR ALISTAMENTO</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="doacoes" class="conteudo-pagina">
+        <div class="container tatico">
+            <h2 class="titulo-sessao">APOIO LOGÍSTICO</h2>
+            <div class="card-doacao">
+                <h3>SUPORTE BÁSICO</h3>
+                <p>Apoie com qualquer valor via PIX.</p>
+                <button class="btn-main">APOIAR AGORA</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-dossie" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharDossie()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-texto"></p>
+        </div>
     </div>
-</div>
 
     <footer>
         <p>&copy; Desenvolvido por LOKY AUTONOMY®</p>
     </footer>
-<script src="script.js"></script>
 
-<button id="btn-audio" class="btn-audio-fixo" onclick="toggleMusic(event)">
-    <span id="icone-som">🔊</span>
-</button>
+    <button id="btn-audio" class="btn-audio-fixo" onclick="toggleMusic(event)">
+        <span id="icone-som">🔊</span>
+    </button>
 
-<audio id="bgMusic" loop>
-    <source src="audio/Iron_Coordinates.mp3" type="audio/mpeg">
-</audio>
+    <audio id="bgMusic" loop>
+        <source src="audio/Iron_Coordinates.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>

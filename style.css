@@ -328,3 +328,134 @@ h1, h2 {
     0% { top: -10%; }
     100% { top: 110%; }
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85); /* Transparência tática */
+    border-bottom: 1px solid rgba(194, 168, 120, 0.3);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #c2a878;
+    font-size: 1.2rem;
+    border-left: 3px solid #c2a878;
+    padding-left: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+/* Hover e Link Ativo */
+.nav-links a:hover, .nav-links a.active {
+    color: #c2a878;
+    text-shadow: 0 0 8px rgba(194, 168, 120, 0.6);
+}
+
+/* Estilo Especial para Doações */
+.btn-donate {
+    border: 1px solid #c2a878;
+    color: #c2a878 !important;
+    border-radius: 2px;
+}
+
+.btn-donate:hover {
+    background: #c2a878;
+    color: #000 !important;
+}
+
+/* Ajuste para o conteúdo não ficar embaixo da navbar */
+header.hero {
+    padding-top: 70px;
+}
+/* Estilo para as seções de página */
+.conteudo-pagina {
+    min-height: 100vh; /* Faz cada página ocupar a tela toda */
+    padding: 100px 20px; /* Espaço para não bater na navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tatico {
+    background: rgba(10, 10, 10, 0.9) !important;
+    border-left: 4px solid #c2a878; /* Detalhe tático lateral */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulário Estilo Terminal */
+.form-tatico {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-tatico input, .form-tatico select {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(194, 168, 120, 0.3);
+    padding: 12px;
+    color: white;
+    outline: none;
+}
+
+.form-tatico input:focus {
+    border-color: #c2a878;
+}
+
+/* Smooth Scroll (ADS Tip: Navegação suave) */
+html {
+    scroll-behavior: smooth;
+}
+/* Garante que o scroll seja suave ao clicar nos botões */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo para cada 'página' */
+.conteudo-pagina {
+    min-height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Importante para o empilhamento */
+    padding: 100px 0; /* Espaço para a Navbar */
+    box-sizing: border-box;
+}
+
+/* Opcional: Se quiser que as seções fiquem bem separadas visualmente */
+#projeto, #recrutamento, #doacoes {
+    background: rgba(0, 0, 0, 0.4); /* Escurece levemente o fundo de cada página */
+}
